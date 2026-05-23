@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 50%, #0f1428 100%);
+    color: #e0e0e0;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Background Animation */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.stars::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow: 
+        100px 200px white, 200px 50px white, 300px 300px white,
+        400px 100px white, 500px 250px white, 600px 150px white,
+        700px 300px white, 800px 50px white, 900px 200px white;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff1744, #d32f2f, #c41c3b);
+    width: 0%;
+    z-index: 999;
+    transition: width 0.1s ease;
+}
+
+/* Music Player */
+.music-player {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+}
+
+.music-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff1744, #d32f2f);
+    border: 2px solid #ffd700;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 23, 68, 0.5);
+    animation: float 3s ease-in-out infinite;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+}
+
+.music-btn:active {
+    transform: scale(0.95);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 80px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.title {
+    font-size: 4rem;
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    margin-bottom: 10px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #ff1744;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    margin: 20px auto;
+}
+
+/* Speech Sections */
+.speech-section {
+    margin-bottom: 80px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid #ff1744;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    animation: fadeInUp 0.8s ease-out;
+    transition: all 0.3s ease;
+}
+
+.speech-section:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 23, 68, 0.1);
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #ffd700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.speech-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #d0d0d0;
+    text-align: justify;
+    animation: typewriter 2s ease-out;
+}
+
+.speech-text:last-child {
+    margin-bottom: 0;
+}
+
+.highlight {
+    color: #ff1744;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.final-plea {
+    color: #ff1744;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Button Container */
+.button-container {
+    text-align: center;
+    margin: 80px 0;
+}
+
+.custom-button {
+    padding: 15px 50px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #ff1744, #d32f2f);
+    color: white;
+    border: 2px solid #ffd700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    box-shadow: 0 0 20px rgba(255, 23, 68, 0.3);
+}
+
+.custom-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg, #ff5252, #ff1744);
+}
+
+.custom-button:active {
+    transform: translateY(-1px);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin: 8px 0;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes typewriter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    pointer-events: none;
+    font-size: 2rem;
+    animation: float-up 3s ease-out forwards;
+}
+
+@keyframes float-up {
+    to {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .speech-section {
+        padding: 25px;
+        margin-bottom: 50px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .speech-text {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .music-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .custom-button {
+        padding: 12px 40px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 40px 15px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .speech-section {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .speech-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
